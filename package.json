@@ -1,0 +1,23 @@
+{
+  "name": "miruyo",
+  "version": "1.0.0",
+  "description": "A media recommender based on word coverage and planning list.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IchanP/miruyo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IchanP/miruyo/issues"
+  },
+  "homepage": "https://github.com/IchanP/miruyo#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

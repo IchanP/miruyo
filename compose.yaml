@@ -1,0 +1,22 @@
+services:
+
+  db:
+    image: postgres
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: example # TODO this should be changed to use an env variable at some point
+      POSTGRES_USER: admin # TODO this should be changed to use an env variable at some point
+      POSTGRES_DB: immersion
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+    - 8080:8080
+
+volumes:
+  pgdata:
