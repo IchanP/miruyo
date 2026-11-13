@@ -1,8 +1,10 @@
+-- migrate:up
+
 -- Users
 
 CREATE TABLE users (
     id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    username text NOT NULL, -- Our username?
+    username text NOT NULL,
     password_hash text NOT NULL,
     created_at timestamptz NOT NULL DEFAULT now(),
     anilist_username text NOT NULL,
@@ -34,3 +36,11 @@ CREATE TABLE user_media (
     watch_status watch_status NOT NULL,
     PRIMARY KEY (user_id, media_id)
 );
+
+-- migrate:down
+
+DROP TABLE user_media;
+DROP TABLE anilist_media;
+DROP TABLE users;
+
+DROP TYPE watch_status, media_format, media_type;
